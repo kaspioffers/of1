@@ -1,0 +1,21 @@
+name: Fetch Offers
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # Run every hour
+  workflow_dispatch:
+
+jobs:
+  fetch-offers:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch Offers
+        uses: kaspioffers/OfferFetcher@main
+        with:
+          database-connection-string: ${{ secrets.DATABASE_CONNECTION_STRING }}
+          timescaledb-connection-string: ${{ secrets.TIMESCALEDB_CONNECTION_STRING }}
+          proxy-url: ${{ secrets.PROXY_URL }}
+          proxy-username: ${{ secrets.PROXY_USERNAME }}
+          proxy-password: ${{ secrets.PROXY_PASSWORD }}
+          batch-size: '100'
+          scan-interval-minutes: '15'
