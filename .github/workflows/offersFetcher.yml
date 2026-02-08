@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Fetch Offers
-        uses: kaspioffers/OfferFetcher-action@main
+        uses: kaspioffers/OfferFetcher-action@0.0.1
         with:
           database-connection-string: ${{ secrets.DATABASE_CONNECTION_STRING }}
           timescaledb-connection-string: ${{ secrets.TIMESCALEDB_CONNECTION_STRING }}
