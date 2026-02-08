@@ -10,8 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Fetch Offers
-        uses: kaspioffers/OfferFetcher-action@0.0.1
+        uses: kaspioffers/OfferFetcher@0main
         with:
+          ghcr-token: ${{ secrets.GHCR_TOKEN }} 
           database-connection-string: ${{ secrets.DATABASE_CONNECTION_STRING }}
           timescaledb-connection-string: ${{ secrets.TIMESCALEDB_CONNECTION_STRING }}
           proxy-url: ${{ secrets.PROXY_URL }}
