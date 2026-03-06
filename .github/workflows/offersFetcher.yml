@@ -14,6 +14,7 @@ jobs:
         with:
           ghcr-token: ${{ secrets.GHCR_TOKEN }} 
           database-connection-string: ${{ secrets.DATABASE_CONNECTION_STRING }}
+          timescaledb-connection-string: ${{ secrets.TIMESCALEDB_CONNECTION_STRING }}
           proxy-url: ${{ secrets.PROXY_URL }}
           proxy-username: ${{ secrets.PROXY_USERNAME }}
           proxy-password: ${{ secrets.PROXY_PASSWORD }}
